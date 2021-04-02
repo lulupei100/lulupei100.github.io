@@ -18,49 +18,45 @@
     
     <body>
         <script>
-            var n;
+            var myName = "裴方萓";
             var myAge = 21;
-            var myHeight = 170, myWeight = 59;
-            var myBMI = (myWeight / Math.pow(myHeight, 2)) * 10000;
-            var countI = 0;
-                for (i = 1; i <= 100; i++) {
-                    countI += i;
-                }
-            var countII = 0;
-                for (i = 1; i <= 10; i++) {
-                    countII += i;
-                }
-            var countIII = 0;
-                for (i = 1; i <= 1000; i++) {
-                    countIII += i;
-                }
-            var countIV = 0;
-                for (i = 1; i <= 10000; i++) {
-                    countIV += i;
-                }
-            document.write("<p>1. 我是B3B71, 裴方萓" + "<br/></p>");
-            document.write("<h4><p>2. 大家好我喜歡吃的水果是芒果<br/></p></h4>");
+            var myHeight = 169, myWeight = 65;
+            document.write("<p>1. 我是B3B71，裴方萓</p>");
+            document.write("<p><h4>2. 大家好！我最喜歡吃的水果是奇異果</h4></p>");
             document.write("<div>以下為變數設定練習</div>");
-            document.write("<p>3. 我是裴方萓今年" + myAge + "歲<br/></p>");
-            document.write("<p>4. 我的身高為" + myHeight + "公分, 我的體重為" + myWeight + "公斤<br/></p>");
-            document.write("<p>5. 所以我的BMI為" + myBMI + "</p>");
-            document.write("<div>以下為以下為for計次計次為圈控制</div>");
-            document.write("<p>6. 從1加到100的總和為" + countI + "<br/></p>");
-            document.write("<p>7. 從1加到10的總和為" + countII + "<br/></p>");
-            document.write("<p>8. 從1加到100的總和為" + countI + "<br/></p>");
-            document.write("<p>9. 從1加到1000的總和為" + countIII + "<br/></p>");
-            document.write("<p>10. 從1加到10000的總和為" + countIV + "<br/></p>");
+            document.write("<p>3. 我是" + myName + "今年" + myAge + "歲" + "</p>");
+            document.write("<p>4. 我的身高為" + myHeight + "公分" + "我的體重為" + myWeight + "公斤" + "</p>");
+            document.write("<p>5. 所以我的BMI為" + myWeight/Math.pow((myHeight/100), 2) + "</p>");
+            document.write("<div>以下為for計次迴圈控制</div>");
+            var sum = 0;
+            for (i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            document.write("<p>6. 從1加到100的總和為" + sum + "</p>");
             
+            var count = 6; 
+            function total(num) {
+                var sum = 0;
+                for (i = 1; i <= num; i++) {
+                    sum += i;
+                }
+                count += 1;
+                document.write("<p>" + count + ".從1加到" + num + "的總和為" + sum + "</p>");
+            }
+            total(10);
+            total(100);
+            total(1000);
+            total(10000);
             document.write("<div>以下為九九乘法表</div>");
-            
-            for (i = 1; i <= 9; i++) {
-                for (j = 1; j <= 9; j++) {
-                    document.write(i + "X" + j + "=" + i * j + " ");
-                    if (j == 9) {
-                        document.write("<br/>"); break;
+            function multiply(no) {
+                for (i = 1; i <= no; i++) {
+                    for (j = 1; j <= no; j++) {
+                        document.write(i + "X" + j + "=" + i * j + " ");
                     }
+                    document.write("<br>");
                 }
             }
+            multiply(9);
         </script>
     </body>
 </html>
