@@ -1,0 +1,26 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta charset = "UTF-8">
+            <title>家庭作業04</title>
+        </head>
+        
+        <body>
+            <script>
+                document.write("<table style = 'border: 3px solid #558c5b'>");
+                function multiply(no) {
+                for (i = 1; i <= no; i++) {
+                    document.write("<tr style = 'border: 1px solid #3f358c'>");
+                    for (j = 1; j <= no; j++) {
+                        document.write("<td style = 'border: 1px solid #3f358c'>");
+                        document.write("" + i + "X" + j + "=" + i * j + " " + "");
+                        document.write("</td>");
+                    }
+                    document.write("<br>");
+                    document.write("</tr>");
+                }
+            }
+            multiply(9);
+            </script>
+        </body>
+    </html>
