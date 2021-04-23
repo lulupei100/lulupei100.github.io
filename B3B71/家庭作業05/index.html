@@ -1,0 +1,79 @@
+<DOCTYPE html>
+<html lang = "zh">
+    <head>
+        <meta charset = "UTF-8">
+        <title>家庭作業05</title>
+        <style>
+            h4 {
+                color: red;
+            }
+            div {
+                color: blue;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id = "form01">
+                姓名: <input type = "text" name = "name01" value = "裴方萓"><br>
+                收件住址: <input type = "text" name = "address01" value = "台北南港區忠孝東路六段408號3樓"><br>
+                電話: <input type = "tel" name = "tel01" value = "0937487694"><br>
+                電子郵件: <input type = "email" name = "email01" value = "lulu100.pei@gmail.com"><br>
+                指定送貨日期: <input type = "date" name = "date01"><br>
+                帽T種類: <br><input type = "radio" name = "hoody" id = "hoody01" value = "三眼怪滿版帽Ｔ">三眼怪滿版帽T 695元<br>
+                            <input type = "radio" name = "hoody" id = "hoody02" value = "小丑相印落肩帽T">小丑相印落肩帽T 763元<br>
+                            <input type = "radio" name = "hoody" id = "hoody03" value = "半開襟帽T">半開襟帽T 1190元<br>
+                            <input type = "radio" name = "hoody" id = "hoody04" value = "漫威立體壓紋帽T">漫威立體壓紋帽T 763元<br>
+                            <input type = "radio" name = "hoody" id = "hoody05" value = "LOGO綿帽T">LOGO綿帽T 990元<br>
+        </form>
+        <button onclick = "shoppingInfo()"><h4>結帳</h4></button>
+        <div id = "demo"></div>
+            <script>
+                function shoppingInfo() {
+                    var x = document.getElementById("form01");
+                    var item = "";
+                    var price = 0;
+                    var text = "<h4>您的購物資訊如下: </h4>";
+                    var i;
+                    text += "<table border = '1' width = '90%' cellspacing = '0' cellpadding = '0'>";
+                    for (i = 0; i < 5; i++) {
+                        text += "<tr>";
+                        switch(i) {
+                            case 0:
+                                item = "姓名: ";
+                                break;
+                            case 1:
+                                item = "收件住址: ";
+                                break;
+                            case 2:
+                                item = "電話: ";
+                                break;
+                            case 3:
+                                item = "電子郵件: ";
+                                break;
+                            case 4: 
+                                item = "指定送貨日期: ";
+                                break;
+                        }
+                        text += "<td>" + item + "</td>" + "<td>" + x.elements[i].value + "</td>";
+                        text += "</tr>";
+                    }
+                    for (i = 5; i <= 9; i++) {
+                        if (x.elements[i].checked == true) {
+                            switch(i) {
+                                case 5: price = 695; break;
+                                case 6: price = 763; break;
+                                case 7: price = 1190; break;
+                                case 8: price = 763; break;
+                                case 9: price = 990; break;
+                            }
+                            text += "<tr><td>帽T種類: </td>" + "<td>" + x.elements[i].value + "</td></tr>";
+                            text += "<tr><td>價格合計: </td>" + "<td>" + price + "元</td></tr>";
+                        }
+                    }
+                    text += "</table>";
+                    document.getElementById("demo").innerHTML = text;
+                }
+            </script>
+    </body>
+</html>
